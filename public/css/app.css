@@ -41,10 +41,10 @@ div.scores {
 }
 
 .teamLogo {
-    width: 200px;
-    height: auto;
-    margin-right: 15px;
-    margin-left: 15px;
+    width: auto;
+    height: 167px;
+    margin-right: 20px;
+    margin-left: 20px;
 }
 
 h1 {
