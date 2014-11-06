@@ -3,9 +3,9 @@ var myApp = angular.module("myApp", []);
 myApp.filter('teamName', function () {
     return function (teamId) {
         if (teamId == 1) {
-            return "TeamA";
+            return "AC Pierdoly";
         } else if (teamId == 2) {
-            return "Stulejorze";
+            return "FC Stulejorze";
         } else return "Invalid Data";
     }
 })
