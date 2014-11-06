@@ -2,11 +2,12 @@ extends layout
 
 block body
     div.text-center(ng-controller='FirstCtrl as ctrl')
-        h2.text-center
+        h2.text-center.title
+            img.teamLogo(src='img/rangers.jpg')
             span.text-success {{1 | teamName}}
             span   vs
             span.text-error  {{2 | teamName}}
-
+            img.teamLogo(src='img/rangers.gif')
         h1 {{matches | matchesFilter:filterBy | team1WinCount}}  :  {{matches | matchesFilter:filterBy | team2WinCount}}
         h5 goals
         h3 ({{matches | matchesFilter:filterBy | goals1}}  :  {{matches | matchesFilter:filterBy | goals2}})

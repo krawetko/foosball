@@ -30,14 +30,26 @@ tr.teamb {
     background-color: #b94a48;
 }
 
+.title {
+    overflow: visible;
+    height: 130px;
+}
+
 div.scores {
     overflow-y: scroll;
     height: 500px;
 }
 
+.teamLogo {
+    width: 200px;
+    height: auto;
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
 h1 {
-    font-size: 70px;
-    line-height: 72px;
+    font-size: 80px;
+    line-height: 82px;
 }
 
 h3 {
