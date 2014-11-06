@@ -1,0 +1,50 @@
+.nav-tabs > li, .nav-pills > li {
+    float: none;
+    display: inline-block;
+    *display: inline; /* ie7 fix */
+    zoom: 1; /* hasLayout ie7 trigger */
+}
+
+.nav-tabs, .nav-pills {
+    text-align: center;
+}
+
+.table-nonfluid {
+    width: auto;
+}
+
+.center-table {
+    margin: 0 auto !important;
+    float: none !important;
+}
+
+.table td, .table th {
+    text-align: center;
+}
+
+tr.teama {
+    background-color: #468847;
+}
+
+tr.teamb {
+    background-color: #b94a48;
+}
+
+div.scores {
+    overflow-y: scroll;
+    height: 500px;
+}
+
+h1 {
+    font-size: 70px;
+    line-height: 72px;
+}
+
+h3 {
+    margin-top: 0px;
+    line-height: 30px;
+}
+
+h5 {
+    margin-bottom: 0px;
+}

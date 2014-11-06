@@ -1,0 +1,50 @@
+extends layout
+
+block body
+    div.text-center(ng-controller='FirstCtrl as ctrl')
+        h2.text-center
+            span.text-success {{1 | teamName}}
+            span   vs
+            span.text-error  {{2 | teamName}}
+
+        h1 {{matches | matchesFilter:filterBy | team1WinCount}}  :  {{matches | matchesFilter:filterBy | team2WinCount}}
+        h5 goals
+        h3 ({{matches | matchesFilter:filterBy | goals1}}  :  {{matches | matchesFilter:filterBy | goals2}})
+
+        div
+
+            ul.nav.nav-pills
+                li.active
+                    a(href="", data-toggle="tab", ng-click="filterBy = null") All
+                li
+                    a(href="",data-toggle="tab", ng-click="filterBy = 'Upokorzenie'") Upokorzenie
+                li
+                    a(href="", data-toggle="tab", ng-click="filterBy = 'Farty'") Farty
+                li
+                    a(href="",data-toggle="tab", ng-click="filterBy = 'Dominacja'") Dominacja
+        br
+        div.scores
+            table.table.table-bordered.table-nonfluid.center-table
+                tr
+                    th #
+                    th Mecz
+                    th Wynik
+                    th Zwyciezca
+                    th Data
+                tr(ng-repeat="match in matches | matchesFilter:filterBy", ng-class="{success: match.winner==1, error: match.winner==2}")
+                    td {{$index + 1}}
+                    td {{1 | teamName}} : {{2 | teamName}}
+                    td
+                        b {{match.goals_1}}:{{match.goals_2}}
+                    td
+                        b {{match.winner | teamName}}
+                    td {{match.date | formatDate}}
+
+        br
+        br
+
+    script(src='js/lib/angular/angular_1.2.js')
+    script(src='js/lib/jquery-1.11.1.min.js')
+    script(src='js/lib/bootstrap.min.js')
+    script(src='js/myAppCtrl.js')
+

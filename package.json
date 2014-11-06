@@ -1,0 +1,25 @@
+{
+    "name": "foosball",
+    "version": "0.0.0",
+    "description": "Gather and displays foosball matches scores between two teams",
+    "main": "app.js",
+    "dependencies": {
+        "body-parser": "^1.0.2",
+        "error-handler": "^0.1.4",
+        "express": "~4.1.1",
+        "jade": "~0.31.2",
+        "method-override": "^1.0.0",
+        "morgan": "^1.0.0",
+        "bcrypt-nodejs": "~0.0.3",
+        "mongodb": "~1.3.9",
+        "validator": "~1.1.3"
+    },
+    "devDependencies": {},
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": "",
+    "author": "Jakub Krawetkowski <krawetko@gmail.com>",
+    "license": "MIT",
+    "private": true
+}
