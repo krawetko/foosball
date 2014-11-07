@@ -7,7 +7,7 @@ block body
             span.text-success {{1 | teamName}}
             span   vs
             span.text-error  {{2 | teamName}}
-            img.teamLogo(src='img/stulejorze.gif')
+            img.teamLogo(src='img/stulejorze.png')
         h1 {{matches | matchesFilter:filterBy | team1WinCount}}  :  {{matches | matchesFilter:filterBy | team2WinCount}}
         h5 goals
         h3 ({{matches | matchesFilter:filterBy | goals1}}  :  {{matches | matchesFilter:filterBy | goals2}})
