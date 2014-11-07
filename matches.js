@@ -19,6 +19,10 @@ function MatchesDAO(db) {
     this.getMatches = function (callback) {
         matches.find().sort({"date": -1}).toArray(callback);
     };
+
+    this.addMatch = function (match, callback) {
+        matches.insert(match, callback);
+    };
 }
 
 

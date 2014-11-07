@@ -13,6 +13,13 @@ function ContentHandler(db) {
         return res.render('index');
     };
 
+    this.displayAddResultPage = function (req, res, next) {
+        "user strict"
+
+
+        return res.render('addResult');
+    };
+
     this.getMatches = function (req, res, next) {
         "use strict"
 
@@ -26,6 +33,19 @@ function ContentHandler(db) {
         });
 
 
+    };
+
+    this.addResult = function (req, res, next) {
+        "use strict"
+        var match = req.body;
+        match.date = new Date(Date.parse(match.date));
+        matches.addMatch(match, function (err, inserted) {
+            if (err) {
+                return res.status(500).end();
+            } else {
+                return res.status(200).end();
+            }
+        });
     };
 }
 

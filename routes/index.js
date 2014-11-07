@@ -8,8 +8,14 @@ module.exports = exports = function (app, db) {
     // The main page of the blog
     app.get('/', contentHandler.displayMainPage);
 
+    app.get('/addResult', contentHandler.displayAddResultPage);
+
 
     app.get('/api/matches', contentHandler.getMatches);
+
+    app.post("/api/addResult", contentHandler.addResult);
+
+
 
     // Error handling middleware
     app.use(ErrorHandler);

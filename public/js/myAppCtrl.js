@@ -109,3 +109,22 @@ myApp.controller('FirstCtrl', function ($scope, $http) {
         });
 });
 
+myApp.controller('AddResultCtrl', function($scope, $http) {
+    $scope.lastOperationStatus = "";
+    $scope.addResult = function (match) {
+        match.winner = match.goals_1 > match.goals_2 ? 1 : 2;
+        match.date = new Date();
+        $scope.lastOperationStatus = "Adding...";
+        $http({
+            method: 'POST',
+            url: '/api/addResult',
+            data: match
+        }).success(function () {
+            $scope.lastOperationStatus = "Success";
+        }).error(function() {
+            $scope.lastOperationStatus = "Failure";
+        })
+    };
+
+})
+
