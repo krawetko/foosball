@@ -3,7 +3,7 @@ block body
     a(href="/") << Back
     div(ng-controller="AddResultCtrl")
         p
-            form.form-horizontal
+            form.form-horizontal(name="form")
                 div.control-group
                     label.control-label {{1 | teamName }} goals:
                     div.controls
@@ -15,7 +15,7 @@ block body
                 div.control-group
                     label.control-label{{lastOperationStatus}}
                     div.controls
-                        button.btn(ng-click="addResult(match)") Submit
+                        button.btn(ng-disabled="form.$invalid", ng-click="addResult(match)") Submit
 
 
     script(src='//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js')
