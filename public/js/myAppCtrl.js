@@ -80,7 +80,7 @@ myApp.filter('matchesFilter', function () {
             }
         } else if (filterBy == "Farty") {
             filterFunction = function (currentMatch) {
-                return (Math.abs(currentMatch.goals_1 - currentMatch.goals_2) == 1);
+                return (Math.abs(currentMatch.goals_1 - currentMatch.goals_2) == 1) || (currentMatch.goals_1 === 9 || currentMatch.goals_2 === 9);
             }
         }
 
@@ -109,7 +109,7 @@ myApp.controller('FirstCtrl', function ($scope, $http) {
         });
 });
 
-myApp.controller('AddResultCtrl', function($scope, $http) {
+myApp.controller('AddResultCtrl', function ($scope, $http) {
     $scope.lastOperationStatus = "";
     $scope.addResult = function (match) {
         match.winner = match.goals_1 > match.goals_2 ? 1 : 2;
@@ -121,7 +121,7 @@ myApp.controller('AddResultCtrl', function($scope, $http) {
             data: match
         }).success(function () {
             $scope.lastOperationStatus = "Success";
-        }).error(function() {
+        }).error(function () {
             $scope.lastOperationStatus = "Failure";
         })
     };
